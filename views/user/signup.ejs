@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/user/signup" method="POST">
+
+        <label for="name">Enter Name</label>
+        <input type="text" name="name">
+
+        <label for="email">Enter Email</label>
+        <input type="email" id="email" name="email">
+
+        <label for="password">Enter Password</label>
+        <input type="password" id="password" name="password">
+        <button>Submit</button>
+
+        <div>
+            <a href="/user/login">Go to login if you are already signed up</a>
+        </div>
+    </form>
+</body>
+</html>

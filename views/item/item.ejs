@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Name : <%= item.name %> </h1>
+    <h2>Category : <%= item.category %> </h2>
+    <h3>Quantity : <%= item.quantity %> </h3>
+        <h3>Price : <%= item.price %> </h3>
+    <h2>Reviews</h2> 
+
+    <% if(reviews){ %>
+        <% for(let review of reviews){%> 
+            <div>
+            <%= review.description %> 
+            <div>  <a href="/review/edit/<%= review._id %>/<%= item._id %>">Edit </a></div>
+            <div>
+                <form action="/review/delete/<%= review._id %>/<%= item._id %>" method="POST">
+                        <button>Delete</button>
+                </form>
+            </div>
+        </div>
+        <% } %>
+      <% } else{ %>  
+        <h1>No reviews</h1>
+     <% } %>
+
+     <h3>Add Review</h3>
+     <form action="/review/newReview/<%= item._id %>" method="POST">
+        <label for="description">Type your review</label>
+        <input type="text" id="description" name="description">
+
+        <button>Submit</button>
+     </form>
+
+
+
+    <h5><a href="/item/delete/<%= item._id %>">Delete The Item</a></h5>
+    <br>
+</body>
+</html>
