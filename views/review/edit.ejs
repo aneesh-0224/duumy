@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<% layout('../views/layout') %>
+
     <form action="/review/edit/<%= id %>/<%= iid %>" method="POST">
-    <label for="description">Edit commnet</label>
-    <input type="text" name="description" id="description" placeholder="<%= desc %>">
-    <button>Submit</button>
-    </form>
-</body>
-</html>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Edit comment</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="<%= desc %>" aria-describedby="emailHelp" name="description">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>

@@ -1,26 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<% layout('../views/layout') %>
+
     <form action="/item/newItem" method="POST">
-        <label for="name">Item name</label>
-        <input type="text" id="name" name="name">
-
-        <label for="category">Item category</label>
-        <input type="text" id="category" name="category">
-
-        <label for="quantity">Item quantity</label>
-        <input type="number" id="quantity" name="quantity">
-
-        <label for="price">Item price</label>
-        <input type="number" id="price" name="price">
-
-        <button>Submit</button>
-    </form>
-</body>
-</html>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Enter category</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="category">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail2" class="form-label">Enter Quantity</label>
+            <input type="number" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" name="quantity">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail13" class="form-label">Enter price</label>
+            <input type="number" class="form-control" id="exampleInputEmail13" aria-describedby="emailHelp" name="price">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail134" class="form-label">Enter Rating</label>
+            <input type="number" class="form-control" id="exampleInputEmail134" aria-describedby="emailHelp" name="rating">
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>

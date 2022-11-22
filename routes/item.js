@@ -24,8 +24,8 @@ router.get('/:id',async(req,res)=>{
 })
 
 router.post('/newItem',async(req,res)=>{
-    const {name,category,quantity,price}=req.body
-    const item=await Item.insertMany({name,quantity,category,price})
+    const {name,category,quantity,price,rating}=req.body
+    const item=await Item.insertMany({name,quantity,category,price,rating})
     res.redirect('/item/all')
 })
 

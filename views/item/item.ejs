@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<% layout('../views/layout') %>
+<div class="container">
     <h1>Name : <%= item.name %> </h1>
     <h2>Category : <%= item.category %> </h2>
     <h3>Quantity : <%= item.quantity %> </h3>
         <h3>Price : <%= item.price %> </h3>
+    <h4>Rating:<%= item.rating %> </h4>
     <h2>Reviews</h2> 
-
+    <div class="container">
     <% if(reviews){ %>
         <% for(let review of reviews){%> 
-            <div>
-            <%= review.description %> 
-            <div>  <a href="/review/edit/<%= review._id %>/<%= item._id %>">Edit </a></div>
+            <div class="container">
+            <h5><%= review.description %> </h5>
+            <div>  <a class="btn btn-primary btn-sm" href="/review/edit/<%= review._id %>/<%= item._id %>">Edit </a></div>
             <div>
                 <form action="/review/delete/<%= review._id %>/<%= item._id %>" method="POST">
-                        <button>Delete</button>
+                        <button class="btn btn-danger btn-sm">Delete</button>
                 </form>
             </div>
         </div>
@@ -28,7 +22,8 @@
       <% } else{ %>  
         <h1>No reviews</h1>
      <% } %>
-
+    </div>
+     <div class="container">
      <h3>Add Review</h3>
      <form action="/review/newReview/<%= item._id %>" method="POST">
         <label for="description">Type your review</label>
@@ -36,10 +31,12 @@
 
         <button>Submit</button>
      </form>
-
-
-
-    <h5><a href="/item/delete/<%= item._id %>">Delete The Item</a></h5>
+    </div>
     <br>
-</body>
-</html>
+    <br>
+
+<div class="container">
+    <h4><a class="btn btn-danger" href="/item/delete/<%= item._id %>">Delete The Item</a></h4>
+</div>
+    <br>
+</div>

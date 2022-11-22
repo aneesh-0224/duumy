@@ -17,6 +17,10 @@ const itemSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
+    rating:{
+        type:Number,
+        required:true
+    },
     review:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Review',
